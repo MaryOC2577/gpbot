@@ -9,10 +9,11 @@
          <p><h4>GranPyBot</h4></p>   
         </header>
         <div>
-            <p><img src="img/grandpybot.png" alt="Votre meilleur ami !" /> Bienvenue ! GranPyBot est à votre disposition.<br>
+            <img src="{{url_for('static', filename='img/grandpybot.png')}}" alt="Votre meilleur ami !" /> <p>Bienvenue ! GranPyBot est à votre disposition.</p><br>
             <label for="request">Votre demande :</label><br>
-        	<textarea id="request" name="request" rows=15 cols=30>GranPyBot ne vous mangeras pas !</textarea>
-        </div>
+        	<textarea id="request" name="request" rows=15 cols=30>GranPyBot ne vous mangeras pas !</textarea><br>
+            <a href="{{url_for('get_bot_response')}}">test</a>
+            </div>
         <footer>
             <p>A propos</p>
         </footer>
