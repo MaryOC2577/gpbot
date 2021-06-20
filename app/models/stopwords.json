@@ -1,9 +1,6 @@
-"""Class cleaner"""
-
-class CleanSentence:
-
-    
-    stop_words = [
+{
+    "stop words":
+    [
         "a","abord","absolument","afin","ah","ai","aie","ailleurs","ainsi","ait","allaient","allo","allons","allô",
         "alors","anterieur","anterieure","anterieures","apres","après","as","assez","attendu","au","aucun","aucune",
         "aujourd","aujourd'hui","aupres","auquel","aura","auraient","aurait","auront","aussi","autre","autrefois","autrement",
@@ -50,10 +47,4 @@ class CleanSentence:
         "à","â","ça","ès","étaient","étais","était","étant","été","être","ô"
         ]
 
-    def split_sentence(sentence, self):
-        return str(sentence).split()
-
-    #def clean_stop_words(sentence, self):
-    #    clean_list = self.split_sentence(sentence)
-    #    for word in clean_list:
-
+}
