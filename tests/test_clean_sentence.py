@@ -1,29 +1,39 @@
-import pytest
+"""Test sentence module."""
+
 from app.models.clean_sentence import CleanSentence
 
-class TestCleanSentence:
+class TestSentence:
 
-    # tester si la phrase est une liste 
-    def split_list_sentence(self):
-        sentence = "absolument rendre à"
-        return CleanSentence().split_sentence(sentence)
-     
-    def test_split_list_sentence(self):
-        assert isinstance(self.split_list_sentence(), list) == True
+    def test_is_list(sentence):
+        """Test if object is a list."""
+        sentence = "test phrase contenant plusieurs mots"
+        list_sentence = CleanSentence.clear_sentence(sentence)
+        assert isinstance(list_sentence, list) == True
 
-    # tester si la liste contient des string
-    def test_string_in_list(self):
-        for element in self.split_list_sentence():
-            assert isinstance(element, str) == True
+    def test_is_empty(sentence):
+        """Error if list is empty."""
+        sentence = "liste non vide"
+        list_sentence = CleanSentence.clear_sentence(sentence)
+        assert list_sentence
 
-    # tester si les mots sont en minuscules
+    def test_is_string(sentence):
+        """Test if elements are strings."""
+        sentence = "123"
+        list_sentence = CleanSentence.clear_sentence(sentence)
+        for words in list_sentence:
+            assert isinstance(words, str) == True
 
-    # tester si les mots de la liste contiennent des accents, caractères spéciaux...
+    def test_is_lower(sentence):
+        """Test if sentence is in lower case."""
+        sentence = "MOTS EN MAJUSCULES"
+        list_sentence = CleanSentence.clear_sentence(sentence)
+        for words in list_sentence:
+            assert words == words.lower()
 
-    # tester si la liste ne contient pas des stops words
-    def test_cleanup_sentence_nostopwords(self):
-        for element in self.split_list_sentence():
-            for words in CleanSentence().stop_words:
-                assert element != words
+    # tester si la liste contient des signes de ponctuation
+    def test_not_punctuaction_mark(sentence):
+        sentence = "Phrase; avec des signes. de, ponctuation..."
+        list_sentence = CleanSentence.clear_sentence(sentence)
+        assert list_sentence == sentence.replace(";", ",", ".").split()
 
-
+    # tester si la liste contient des stops words
