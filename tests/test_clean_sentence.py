@@ -31,9 +31,13 @@ class TestSentence:
             assert words == words.lower()
 
     # tester si la liste contient des signes de ponctuation
-    def test_not_punctuaction_mark(sentence):
-        sentence = "Phrase; avec des signes. de, ponctuation..."
-        list_sentence = CleanSentence.clear_sentence(sentence)
-        assert list_sentence == sentence.replace(";", ",", ".").split()
+    # def test_not_punctuaction_mark(sentence):
+    #     sentence = "Phrase; avec des signes. de, ponctuation..."
+    #     list_sentence = CleanSentence.clear_sentence(sentence)
+    #     assert list_sentence == sentence.replace(";", ",", ".").split()
 
     # tester si la liste contient des stops words
+    def test_is_stop_words(sentence):
+        sentence = "cette phrase contient divers euh stop words"
+        list_sentence = CleanSentence.clear_sentence(sentence)
+        assert list_sentence == CleanSentence.delete_stop_words(list_sentence)
