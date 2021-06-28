@@ -1,1 +1,2 @@
 FLASK_APP=grandpybot.py
+FLASK_DEBUG=True

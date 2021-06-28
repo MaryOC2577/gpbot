@@ -1,21 +1,63 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<title>GranPyBot</title>
-	</head>
-	<body>
-        <header>
-         <p><h4>GranPyBot</h4></p>   
-        </header>
-        <div>
-            <img src="{{url_for('static', filename='img/grandpybot.png')}}" alt="Votre meilleur ami !" /> <p>Bienvenue ! GranPyBot est à votre disposition.</p><br>
-            <label for="request">Votre demande :</label><br>
-        	<textarea id="request" name="request" rows=15 cols=30>GranPyBot ne vous mangeras pas !</textarea><br>
-            <a href="{{url_for('get_bot_response')}}">test</a>
-            </div>
-        <footer>
-            <p>A propos</p>
-        </footer>
-	</body>
+
+<head>
+    <meta charset="utf-8" />
+    <title>GranPyBot</title>
+</head>
+
+<body>
+    <header>
+        <p>
+        <h4>GranPyBot</h4>
+        </p>
+    </header>
+    <div>
+        <img src="{{url_for('static', filename='img/grandpybot.png')}}" alt="Votre meilleur ami !" />
+        <p>Bienvenue ! GranPyBot est à votre disposition.</p><br>
+        <form id="chatbox" action="/find_place">
+            <label for="text">Votre demande</label><br />
+            <input type="text" id="text" name="text" />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+    <div id="chatzone"></div>
+    <script>
+        // --   FUNCTION DEFINITION  --
+
+        function onSubmit(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const $textInput = document.getElementById("text");
+            const userText = $textInput.value;
+
+            const params = {
+                method: "POST",
+                headers: new Headers({ "content-type": "application/json" }),
+                body: JSON.stringify({ text: userText }),
+            };
+
+            const fetchPromise = fetch("/find_place", params);
+            fetchPromise.then(onServerResponse);
+        }
+
+        function onServerResponse(response) {
+            const JsonPromise = response.json();
+            JsonPromise.then(onJson);
+        }
+
+        function onJson(response) {
+            console.log(response);
+            document.getElementById("chatzone").innerText = response.cleaned_text;
+        }
+
+        // --   CLIENT CODE DEFINITION  --
+
+        document.getElementById("chatbox").addEventListener("submit", onSubmit);
+    </script>
+    <footer>
+        <p>A propos</p>
+    </footer>
+</body>
+
 </html>
