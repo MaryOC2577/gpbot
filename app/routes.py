@@ -5,6 +5,8 @@ from flask.json import jsonify
 from app import app
 from flask import render_template
 
+# from app.models.clean_sentence import CleanSentence
+
 
 @app.route("/")
 @app.route("/index")
@@ -20,5 +22,7 @@ def get_bot_response():
 @app.route("/find_place", methods=["POST"])
 def find_place():
     res = request.get_json()
-    print(res["text"])
+    print("sentence : ", res["text"])
+    # result = CleanSentence.clean_sentence(res)
+    # print("cleaned sentence : ", result)
     return jsonify(cleaned_text=res["text"])
