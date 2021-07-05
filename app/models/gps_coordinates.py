@@ -13,5 +13,5 @@ class HereGps:
             "q": sentence,
         }
         response = requests.get(url, params=params)
-        coord = response.json()["items"][0]["position"]
-        return coord
+        coords = response.json()["items"][0]["position"]
+        return coords
