@@ -5,6 +5,7 @@ from flask.json import jsonify
 from app import app
 from flask import render_template
 from app.models.clean_sentence import CleanSentence
+from app.models.gps_coordinates import HereGps
 
 
 @app.route("/")
@@ -19,6 +20,13 @@ def find_place():
     clear_sentence = res["text"]
     print("sentence : ", clear_sentence)
     result = CleanSentence()
-    result.clean_sentence(clear_sentence)
-    print("cleaned sentence : ", result)
-    return jsonify(cleaned_text=res["text"])
+    coords = HereGps()
+    place_coords = coords.find_coordinates(
+        " ".join(result.clean_sentence(clear_sentence))
+    )
+    print("Coords : ", place_coords)
+    return jsonify(
+        cleaned_text=res["text"],
+        place_lng=place_coords["lng"],
+        place_lat=place_coords["lat"],
+    )

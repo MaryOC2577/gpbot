@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
     <title>GranPyBot</title>
 </head>
 
@@ -55,6 +58,40 @@
 
         document.getElementById("chatbox").addEventListener("submit", onSubmit);
     </script>
+    <div style="width: 640px; height: 480px" id="mapContainer"></div>
+
+    <script>
+        // Initialize the platform object:
+        var platform = new H.service.Platform({
+            'apikey': '{nA_2GT2YF3clqlab3lCR8BNVlyVeSdcnmZ2Co_6d9VE}'
+        });
+
+        // Obtain the default map types from the platform object
+        var maptypes = platform.createDefaultLayers();
+
+        // Instantiate (and display) a map object:
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.vector.normal.map,
+            {
+                zoom: 10,
+                center: { lng: response.place_lng, lat: response.place_lat }
+            });
+
+        // Call the geocode method with the geocoding parameters,
+        // the callback and an error callback function (called if a
+        // communication error occurs):
+        service.geocode({
+            q: 'Berlin'
+        }, (result) => {
+            // Add a marker for each location found
+            result.items.forEach((item) => {
+                map.addObject(new H.map.Marker(item.position));
+
+            });
+        }, alert);
+    </script>
+
     <footer>
         <p>A propos</p>
     </footer>

@@ -16,7 +16,7 @@ class CleanSentence:
 
     def delete_stop_words(self, list_sentence):
         """Delete stop_words in a list."""
-        list_words = self.load_stop_words()
+        list_words = self.load_stop_words()["stop words"]
         for word in list_sentence:
             if word in list_words:
                 del list_sentence[list_sentence.index(word)]
