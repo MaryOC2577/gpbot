@@ -26,8 +26,4 @@ def find_place():
     )
     print("Cleaned sentence : ", " ".join(result.clean_sentence(clear_sentence)))
     print("Coords : ", place_coords)
-    return jsonify(
-        cleaned_text=res["text"],
-        place_lng=place_coords["lng"],
-        place_lat=place_coords["lat"],
-    )
+    return jsonify(cleaned_text=res["text"])
