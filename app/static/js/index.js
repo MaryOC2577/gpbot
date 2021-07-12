@@ -58,6 +58,7 @@ service.geocode({
     });
 }, alert);
 
+
 // --   CLIENT CODE DEFINITION  --
 
 document.getElementById("chatbox").addEventListener("submit", onSubmit);
