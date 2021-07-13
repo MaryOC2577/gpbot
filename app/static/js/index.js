@@ -42,7 +42,7 @@ var map = new H.Map(
     maptypes.vector.normal.map,
     {
         zoom: 10,
-        center: { lng: 2.3414, lat: 48.85717 }
+        center: { lng: response.place_lng, lat: response.place_lat }
     });
 
 // Call the geocode method with the geocoding parameters,
