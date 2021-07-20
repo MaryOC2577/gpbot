@@ -18,15 +18,16 @@
     <div>
         <img src="{{url_for('static', filename='img/grandpybot.png')}}" alt="Votre meilleur ami !" />
         <p>Bienvenue ! GranPyBot est à votre disposition.</p><br>
-        <form id="chatbox" action="/find_place">
+        <form id="chatbox">
             <label for="text">Votre demande</label><br />
             <input type="text" id="text" name="text" />
-            <input type="submit" value="Submit" onclick="onSubmit()" />
+            <button id="submitBtn" type="button">Envoyer</button>
         </form>
+
     </div>
     <div id="chatzone"></div>
     <div style="width: 640px; height: 480px" id="mapContainer"></div>
-    <script scr="/static/js/index.js"></script>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
     <footer>
         <p>A propos</p>
     </footer>

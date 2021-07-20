@@ -1,11 +1,13 @@
 
 // --   FUNCTION DEFINITION  --
 
-function onSubmit(event) {
+document.getElementById("submitBtn").addEventListener("click", function (event) {
     event.preventDefault();
     event.stopPropagation();
     const $textInput = document.getElementById("text");
     const userText = $textInput.value;
+
+    console.log("onSubmit called !!");
 
     const params = {
         method: "POST",
@@ -15,7 +17,7 @@ function onSubmit(event) {
 
     const fetchPromise = fetch("/find_place", params);
     fetchPromise.then(onServerResponse);
-}
+});
 
 function onServerResponse(response) {
     const JsonPromise = response.json();
