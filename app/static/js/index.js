@@ -40,11 +40,11 @@ var maptypes = platform.createDefaultLayers();
 
 // Instantiate (and display) a map object:
 var map = new H.Map(
-    document.getElementById('mapContainer'),
+    document.getElementById('map_container'),
     maptypes.vector.normal.map,
     {
         zoom: 10,
-        center: { lng: response.place_lng, lat: response.place_lat }
+        center: { lng: 2.3414, lat: 48.85717 }
     });
 
 // Call the geocode method with the geocoding parameters,
