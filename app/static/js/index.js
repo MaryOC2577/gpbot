@@ -40,7 +40,7 @@ var maptypes = platform.createDefaultLayers();
 
 // Instantiate (and display) a map object:
 var map = new H.Map(
-    document.getElementById('map_container'),
+    document.getElementById('mapContainer'),
     maptypes.vector.normal.map,
     {
         zoom: 10,
@@ -64,3 +64,4 @@ service.geocode({
 // --   CLIENT CODE DEFINITION  --
 
 document.getElementById("chatbox").addEventListener("submit", onSubmit);
+document.getElementById("map_container").addEventListener("load", onLoad);
