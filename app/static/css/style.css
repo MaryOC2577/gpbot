@@ -1,0 +1,32 @@
+#textzone
+{
+    display: flex;
+    word-wrap: break-word;
+}
+
+.element
+{
+    margin: auto;
+}
+
+#chatzone
+{
+    display: flex;
+    word-wrap: break-word;
+}
+
+.element
+{
+    margin: auto;
+}
+
+#mapContainer
+{
+    display: flex;
+    word-wrap: break-word;
+}
+
+.element
+{
+    margin: auto;
+}
