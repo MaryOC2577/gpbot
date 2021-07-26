@@ -35,5 +35,4 @@ function onJson(response) {
 
 
 // --   CLIENT CODE DEFINITION  --
-
 //document.getElementById("chatbox").addEventListener("submitBtn", onSubmit);

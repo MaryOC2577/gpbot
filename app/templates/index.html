@@ -35,21 +35,20 @@
         function displayMap(lati, longi) {
             // Initialize the platform object:
             var platform = new H.service.Platform({
-                'app_id': '{{EtVVzQPzJ7UmbsgA2hgs}}',
-                'apikey': '{{ALVdVW2nuitwsEdyBZ4ftGgxEEGG8gFpNHvUzwLXS9E}}'
+                'apikey': '{nA_2GT2YF3clqlab3lCR8BNVlyVeSdcnmZ2Co_6d9VE}'
             });
 
+            // Obtain the default map types from the platform object
+            var maptypes = platform.createDefaultLayers();
+
             // Instantiate (and display) a map object:
-            const map = new H.Map(document.getElementById('mapContainer'),
-                platform.createDefaultLayers().satellite.map,
+            var map = new H.Map(
+                document.getElementById('mapContainer'),
+                maptypes.vector.normal.map,
                 {
-                    zoom: 0,
-                    center: { lng: longi, lat: latit }
+                    zoom: 10,
+                    center: { lng: longi, lat: lati }
                 });
-            const mapEvents = new H.mapevents.MapEvents(map);
-            const behavior = new H.mapevents.Behavior(mapEvents);
-            const marker1 = new H.map.Marker({ lat: lati, lng: longi });
-            map.addObject(marker1);
         }
     </script>
     <footer>
