@@ -28,8 +28,30 @@
 
     </div>
     <div id="chatzone"></div>
-    <div style="width: 640px; height: 480px" id="mapContainer"></div>
+    <div id="wikizone"></div>
+    <div style="width: 640%; height: 480%" id="mapContainer"></div>
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
+    <script>
+        function displayMap(lati, longi) {
+            //map
+            // Initialize the platform object:
+            var platform = new H.service.Platform({
+                'apikey': '{nA_2GT2YF3clqlab3lCR8BNVlyVeSdcnmZ2Co_6d9VE}'
+            });
+
+            // Obtain the default map types from the platform object
+            var maptypes = platform.createDefaultLayers();
+
+            // Instantiate (and display) a map object:
+            var map = new H.Map(
+                document.getElementById('mapContainer'),
+                maptypes.vector.normal.map,
+                {
+                    zoom: 10,
+                    center: { lng: longi, lat: lati }
+                });
+        }
+    </script>
     <footer>
         <p>A propos</p>
     </footer>
