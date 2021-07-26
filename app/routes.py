@@ -37,10 +37,10 @@ def find_place():
     )
     print("Cleaned sentence : ", " ".join(result.clean_sentence(clear_sentence)))
     print("Coords : ", place_coords)
-    print("Wiki info : ", wiki.clean_wiki(clear_sentence))
+    # print("Wiki info : ", wiki.clean_wiki(clear_sentence))
     return jsonify(
         cleaned_text=res["text"],
         place_lat=place_coords["lat"],
         place_lng=place_coords["lng"],
-        wiki_info=wiki.clean_wiki(clear_sentence),
+        wiki_info="fake wiki",
     )

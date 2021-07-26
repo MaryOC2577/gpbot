@@ -29,11 +29,11 @@ function onJson(response) {
     console.log(response);
     document.getElementById("chatzone").innerText = response.cleaned_text;
     document.getElementById("wikizone").innerText = response.wiki_info;
-    $.ajax(displayMap(response.place_lat, response.place_lng));
+    displayMap(response.place_lat, response.place_lng);
 }
 
 
 
 // --   CLIENT CODE DEFINITION  --
 
-document.getElementById("chatbox").addEventListener("submitBtn", onSubmit);
+//document.getElementById("chatbox").addEventListener("submitBtn", onSubmit);

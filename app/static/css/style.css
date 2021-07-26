@@ -1,32 +1,7 @@
-#textzone
-{
-    display: flex;
-    word-wrap: break-word;
-}
-
-.element
-{
-    margin: auto;
-}
-
-#chatzone
-{
-    display: flex;
-    word-wrap: break-word;
-}
-
-.element
-{
-    margin: auto;
-}
-
-#mapContainer
-{
-    display: flex;
-    word-wrap: break-word;
-}
-
-.element
-{
-    margin: auto;
-}
+#mapContainer {
+    height: 640px;
+    /* The height is 400 pixels */
+    width: 480%;
+    /* The width is the width of the web page */
+    overflow: hidden;
+  }
