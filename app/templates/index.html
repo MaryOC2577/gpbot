@@ -33,9 +33,12 @@
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
     <script>
         function displayMap(lati, longi) {
+            document.getElementById("mapContainer").innerText = ""
             // Initialize the platform object:
             var platform = new H.service.Platform({
-                'apikey': '{nA_2GT2YF3clqlab3lCR8BNVlyVeSdcnmZ2Co_6d9VE}'
+                'apikey': 'ALVdVW2nuitwsEdyBZ4ftGgxEEGG8gFpNHvUzwLXS9E',
+                'app_id': 'EtVVzQPzJ7UmbsgA2hgs'
+
             });
 
             // Obtain the default map types from the platform object

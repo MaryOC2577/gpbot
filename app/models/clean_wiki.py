@@ -15,6 +15,7 @@ class WikiInfo:
             },
         ).json()
 
+        # print(response)
         raw_html = response["parse"]["text"]["*"]
         document = html.document_fromstring(raw_html)
         first_p = document.xpath("//p")[0]
