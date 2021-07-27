@@ -2,9 +2,14 @@ import requests
 
 from lxml import html
 
+# import wikipedia
+
 
 class WikiInfo:
     def clean_wiki(self, location):
+        # intro_text = wikipedia.summary(location)
+        # print(intro_text)
+        # return intro_text
 
         response = requests.get(
             "https://fr.wikipedia.org/w/api.php",
