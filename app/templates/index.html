@@ -52,6 +52,8 @@
                     zoom: 10,
                     center: { lng: longi, lat: lati }
                 });
+            var locationMarker = new H.map.Marker({ lat: lati, lng: longi });
+            map.addObject(locationMarker);
         }
     </script>
     <footer>

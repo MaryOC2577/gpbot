@@ -3,17 +3,17 @@ from flask import request
 from flask.helpers import make_response
 from flask.json import jsonify
 
-from flask_cors.decorator import cross_origin
+# from flask_cors.decorator import cross_origin
 from app import app
 from flask import render_template
 from app.models.clean_sentence import CleanSentence
 from app.models.gps_coordinates import HereGps
 from app.models.clean_wiki import WikiInfo
 
-from flask_cors import CORS
+# from flask_cors import CORS
 
-CORS(app)
-cors = CORS(app, resources={r"/*": {"origins": "localhost"}})
+# CORS(app)
+# cors = CORS(app, resources={r"/*": {"origins": "localhost"}})
 
 
 @app.route("/")
@@ -23,7 +23,7 @@ def index():
 
 
 @app.route("/find_place", methods=["GET", "POST"])
-@cross_origin()
+# @cross_origin()
 def find_place():
     res = request.get_json()
     print(res)
