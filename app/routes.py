@@ -36,11 +36,14 @@ def find_place():
         " ".join(result.clean_sentence(clear_sentence))
     )
     print("Cleaned sentence : ", " ".join(result.clean_sentence(clear_sentence)))
-    print("Coords : ", place_coords)
+    print("Coords : ", place_coords["coords"])
+    print("adress : ", place_coords["adress"])
     print("Wiki info : ", wiki.clean_wiki(clear_sentence))
+
     return jsonify(
         cleaned_text=res["text"],
-        place_lat=place_coords["lat"],
-        place_lng=place_coords["lng"],
+        place_lat=place_coords["coords"]["lat"],
+        place_lng=place_coords["coords"]["lng"],
+        place_adress=place_coords["adress"],
         wiki_info=wiki.clean_wiki(clear_sentence),
     )

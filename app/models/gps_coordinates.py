@@ -12,9 +12,10 @@ class HereGps:
             "apiKey": "nA_2GT2YF3clqlab3lCR8BNVlyVeSdcnmZ2Co_6d9VE",
             "q": sentence,
         }
+        coords = {}
         response = requests.get(url, params=params)
-        coords = response.json()["items"][0]["position"]
+        coords["coords"] = response.json()["items"][0]["position"]
         # print("adresse : ", response.json()["items"][0]["title"])
-        adress = response.json()["items"][0]["title"]
-        print("adress : ", adress)
+        coords["adress"] = response.json()["items"][0]["title"]
+        # print("adress : ", coords["adress"])
         return coords
