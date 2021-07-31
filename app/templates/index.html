@@ -17,6 +17,7 @@
         <h4>GranPyBot</h4>
         </p>
     </header>
+    <div class="flex-container"></div>
     <div id="textzone">
         <img src="{{url_for('static', filename='img/grandpybot.png')}}" alt="Votre meilleur ami !" />
         <p>Bienvenue ! GranPyBot est à votre disposition.</p><br>
@@ -27,9 +28,13 @@
         </form>
 
     </div>
+
     <div id="chatzone"></div>
+    <div id="adress"></div>
     <div id="wikizone"></div>
+    </div>
     <div style="width: 640px; height: 480px" id="mapContainer"></div>
+
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
     <script>
         function displayMap(lati, longi) {

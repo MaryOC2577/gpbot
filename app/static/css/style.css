@@ -5,3 +5,22 @@
     /* The width is the width of the web page */
     overflow: hidden;
   }
+
+  #flex-container {
+    display: flex;
+    background-color: grey;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #chatzone {
+    background-color: blue;
+  }
+
+  #adress {
+    background-color: green;
+  }
+
+  #wikizone {
+    background-color: aquamarine;
+  }
