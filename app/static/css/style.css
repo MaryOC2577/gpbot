@@ -1,34 +1,29 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: justify;
+  align-items: center;
+  flex-direction: column;
+   
+}
 
 #textzone {
-  height: 440px;
-  width: 480px;
-  text-align: justify;
-  background-color: rgb(230, 212, 189);
+  text-align: center;
 }
 
 #chatzone {
-  height: 40px;
-  width: 480px;
-  text-align: justify;
   background-color: rgb(192, 192, 240);
 }
 
 #adress {
-  height: 40px;
-  width: 480px;
-  text-align: justify;
   background-color: rgb(156, 187, 156);
 }
 
 #wikizone {
-  height: 240px;
-  width: 480px;
-  text-align: justify;
   background-color: aquamarine;
 }
 
 #mapContainer {
   height: 640px;
   width: 480px;
-  text-align: justify;
 }
