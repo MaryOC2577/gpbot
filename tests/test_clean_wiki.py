@@ -1,7 +1,7 @@
 import requests
 
 
-class WikiResult:
+class WikiResult:  # pareil que pour here
     def execute(self):
         return requests.get("https://fr.wikipedia.org/w/api.php").json()
 
@@ -17,4 +17,4 @@ def test_execute(monkeypatch):
 
     monkeypatch.setattr(requests, "get", fake_get)
     wiki = WikiResult()
-    assert wiki.execute() == "Une phrase de test."
+    assert wiki.execute() == "Une phrase de test."  # être sure que le retour de mediawiki est bien une string direct et non un dictionnaire de données
