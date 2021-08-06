@@ -31,9 +31,9 @@ class TestSentence:
             assert words == words.lower()
 
     # tester si la liste contient des stops words
-    def test_is_stop_words(sentence):
-        sentence = "cette phrase contient divers euh stop words"
-        list_sentence = CleanSentence()
-        assert list_sentence.clear_sentence(
-            sentence
-        ) == list_sentence.delete_stop_words(list_sentence.clear_sentence(sentence))
+    # def test_is_stop_words(sentence):
+    #     sentence = "cette phrase contient divers euh stop words"
+    #     list_sentence = CleanSentence()
+    #     assert list_sentence.clear_sentence(
+    #         sentence
+    #     ) == list_sentence.delete_stop_words(list_sentence.clear_sentence(sentence))
