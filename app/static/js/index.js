@@ -28,12 +28,12 @@ function onServerResponse(response) {
 function onJson(response) {
     console.log(response);
     document.getElementById("chatzone").innerText = response.cleaned_text + "\n GrandPy Bot a bien reçu votre demande.\n"
-    document.getElementById("adress").innerText = response.place_adress;
-    document.getElementById("wikizone").innerText = response.wiki_info;
-    displayMap(response.place_lat, response.place_lng);
+    document.getElementById("adress").innerText = response.coords.adress;  // changements qui reflètent les changements indiqués dans la vue
+    document.getElementById("wikizone").innerText = response.wiki_text;  // changements qui reflètent les changements indiqués dans la vue
+    displayMap(response.coords.lat, response.coords.lng);  // changements qui reflètent les changements indiqués dans la vue
 }
 
-
+// globalement le code JS rien à redire !
 
 // --   CLIENT CODE DEFINITION  --
 //document.getElementById("chatbox").addEventListener("submitBtn", onSubmit);
