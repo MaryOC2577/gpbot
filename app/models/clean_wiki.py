@@ -25,4 +25,7 @@ class WikiInfo:
         document = html.document_fromstring(raw_html)
         first_p = document.xpath("//p")[0]
         intro_text = first_p.text_content()
-        return intro_text
+        if intro_text.isspace():
+            return "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
+        else:
+            return intro_text
