@@ -15,7 +15,5 @@ class HereGps:
         coords = {}
         response = requests.get(url, params=params)
         coords["coords"] = response.json()["items"][0]["position"]
-        # print("adresse : ", response.json()["items"][0]["title"])
         coords["adress"] = response.json()["items"][0]["title"]
-        # print("adress : ", coords["adress"])
         return coords
