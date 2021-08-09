@@ -4,7 +4,7 @@ import requests
 from pprint import pprint
 
 
-class HereGps:
+class HereAPI:
     def find_coordinates(self, sentence):
 
         url = "https://geocode.search.hereapi.com/v1/geocode"

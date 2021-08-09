@@ -3,8 +3,8 @@ import requests
 from lxml import html
 
 
-class WikiInfo:
-    def clean_wiki(self, location):
+class WikiAPI:
+    def find_wiki_text(self, location):
 
         response = requests.get(
             "https://fr.wikipedia.org/w/api.php",

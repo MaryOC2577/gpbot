@@ -27,13 +27,8 @@ function onServerResponse(response) {
 
 function onJson(response) {
     console.log(response);
-    document.getElementById("chatzone").innerText = response.cleaned_text + "\n GrandPy Bot a bien reçu votre demande.\n"
-    document.getElementById("adress").innerText = response.place_adress;
+    document.getElementById("chatzone").innerText = response.text + "\n GrandPy Bot a bien reçu votre demande.\n";
+    document.getElementById("adress").innerText = response.coords.adress;
     document.getElementById("wikizone").innerText = response.wiki_info;
-    displayMap(response.place_lat, response.place_lng);
+    displayMap(response.coords["coords"]["lat"], response.coords["coords"]["lng"]);
 }
-
-
-
-// --   CLIENT CODE DEFINITION  --
-//document.getElementById("chatbox").addEventListener("submitBtn", onSubmit);

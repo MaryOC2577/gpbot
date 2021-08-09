@@ -3,7 +3,7 @@
 import json
 
 
-class CleanSentence:
+class Parser:
     def load_stop_words(self):
         with open("app/data/stopwords.json", "r") as json_data:
             stop_words = json.load(json_data)
@@ -22,5 +22,5 @@ class CleanSentence:
                 del list_sentence[list_sentence.index(word)]
         return list_sentence
 
-    def clean_sentence(self, sentence):
-        return self.delete_stop_words(self.clear_sentence(sentence))
+    def clean_text(self, sentence):
+        return " ".join(self.delete_stop_words(self.clear_sentence(sentence)))
