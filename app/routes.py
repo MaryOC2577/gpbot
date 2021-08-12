@@ -19,7 +19,7 @@ def index():
 
 @app.route("/find_place", methods=["GET", "POST"])
 def find_place():
-    # --- old ---
+    # --- A supprimer ---
     # res = request.get_json()
     # print(res)
     # clear_sentence = res["text"]
@@ -34,7 +34,7 @@ def find_place():
     # print("Coords : ", place_coords["coords"])
     # print("adress : ", place_coords["adress"])
     # print("Wiki info : ", wiki.clean_wiki(clear_sentence))
-    # --- end ---
+    # ---
 
     data = request.get_json()
     text = data["text"]
