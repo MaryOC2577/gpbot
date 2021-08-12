@@ -21,19 +21,21 @@
         </p>
     </header>
 
-    <div style="width: 640px; height: 400px" id="textzone">
+    <div class="presentation">
         <img src="{{url_for('static', filename='img/grandpybot.png')}}" alt="Votre meilleur ami !" />
         <p>Bienvenue ! GranPyBot est à votre disposition.</p><br>
+    </div>
+    <div class="chatarea">
         <form id="chatbox">
             <label for="text">Votre demande</label><br />
             <input type="text" id="text" name="text" />
             <button id="submitBtn" type="button">Envoyer</button>
         </form>
-    </div>
 
-    <div style="width: 640px; height: 20px" id="chatzone"></div>
-    <div style="width: 640px; height: 20px" id="adress"></div>
-    <div style="width: 640px; height: 200px" id="wikizone"></div>
+        <div style="width: 640px; height: 20px" id="chatzone"></div>
+        <div style="width: 640px; height: 20px" id="adress"></div>
+        <div style="width: 640px; height: 200px" id="wikizone"></div>
+    </div>
 
     <div style="width: 640px; height: 480px" id="mapContainer"></div>
 

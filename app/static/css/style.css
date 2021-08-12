@@ -7,23 +7,14 @@ body {
    
 }
 
-#textzone {
-  text-align: center;
+
+.chatarea {
+  background-color: cadetblue;
 }
 
-#chatzone {
-  background-color: rgb(192, 192, 240);
-}
-
-#adress {
-  background-color: rgb(156, 187, 156);
-}
-
-#wikizone {
-  background-color: aquamarine;
-}
-
-#mapContainer {
-  height: 640px;
-  width: 480px;
+.presentation {
+  width: auto;
+  height: auto;
+  border-style: solid, darkcyan;
+  border-radius: 20px;
 }

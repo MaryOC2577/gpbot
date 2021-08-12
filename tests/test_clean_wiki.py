@@ -1,14 +1,11 @@
 import requests
 
-
-class WikiResult:
-    def execute(self):
-        return requests.get("https://fr.wikipedia.org/w/api.php").json()
+from app.models.clean_wiki import WikiAPI
 
 
 class FakeResponse:
     def json(self):
-        return "Une phrase de test."
+        return "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
 
 
 def test_execute(monkeypatch):
@@ -16,5 +13,8 @@ def test_execute(monkeypatch):
         return FakeResponse()
 
     monkeypatch.setattr(requests, "get", fake_get)
-    wiki = WikiResult()
-    assert wiki.execute() == "Une phrase de test."
+    wiki = WikiAPI()
+    assert (
+        wiki.find_wiki_text("paris")
+        == "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
+    )

@@ -1,32 +1,32 @@
 """Test sentence module."""
 
-from app.models.clean_sentence import CleanSentence
+from app.models.clean_sentence import Parser
 
 
 class TestSentence:
     def test_is_list(sentence):
         """Test if object is a list."""
         sentence = "test phrase contenant plusieurs mots"
-        list_sentence = CleanSentence()
+        list_sentence = Parser()
         assert isinstance(list_sentence.clear_sentence(sentence), list) == True
 
     def test_is_empty(sentence):
         """Error if list is empty."""
         sentence = "liste non vide"
-        list_sentence = CleanSentence()
+        list_sentence = Parser()
         assert list_sentence.clear_sentence(sentence)
 
     def test_is_string(sentence):
         """Test if elements are strings."""
         sentence = "123"
-        list_sentence = CleanSentence()
+        list_sentence = Parser()
         for words in list_sentence.clear_sentence(sentence):
             assert isinstance(words, str) == True
 
     def test_is_lower(sentence):
         """Test if sentence is in lower case."""
         sentence = "MOTS EN MAJUSCULES"
-        list_sentence = CleanSentence()
+        list_sentence = Parser()
         for words in list_sentence.clear_sentence(sentence):
             assert words == words.lower()
 
