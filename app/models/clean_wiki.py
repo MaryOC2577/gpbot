@@ -9,9 +9,11 @@ class WikiAPI:
         response = requests.get(
             "https://fr.wikipedia.org/w/api.php",
             params={
-                "action": "parse",
-                "page": location,
+                "action": "opensearch",
+                "search": location,
                 "format": "json",
+                "limit": 1,
+                "namespace": 0,
             },
         ).json()
         raw_html = response["parse"]["text"]["*"]

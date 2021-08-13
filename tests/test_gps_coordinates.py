@@ -3,14 +3,13 @@ import requests
 from app.models.gps_coordinates import HereAPI
 
 
-# class GpsCoords:
-#     def execute(self):
-#         return requests.get("https://geocode.search.hereapi.com/v1/geocode").json()
-
-
 class FakeResponse:
     def json(self):
-        return {"lat": 48.87695, "lng": 2.29362}
+        return {
+            "lat": 48.87695,
+            "lng": 2.3414,
+            "adress": "Paris, Île-de-France, France",
+        }
 
 
 def test_execute(monkeypatch):

@@ -32,3 +32,28 @@ function onJson(response) {
     document.getElementById("wikizone").innerText = response.wiki_info;
     displayMap(response.coords["coords"]["lat"], response.coords["coords"]["lng"]);
 }
+
+
+function displayMap(lati, longi) {
+    document.getElementById("mapContainer").innerText = ""
+    // Initialize the platform object:
+    var platform = new H.service.Platform({
+        'apikey': 'ALVdVW2nuitwsEdyBZ4ftGgxEEGG8gFpNHvUzwLXS9E',
+        'app_id': 'EtVVzQPzJ7UmbsgA2hgs'
+
+    });
+
+    // Obtain the default map types from the platform object
+    var maptypes = platform.createDefaultLayers();
+
+    // Instantiate (and display) a map object:
+    var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.vector.normal.map,
+        {
+            zoom: 13,
+            center: { lng: longi, lat: lati }
+        });
+    var locationMarker = new H.map.Marker({ lat: lati, lng: longi });
+    map.addObject(locationMarker);
+}
