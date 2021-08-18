@@ -30,7 +30,7 @@ function onJson(response) {
     document.getElementById("chatzone").innerText = response.text + "\n GrandPy Bot a bien reçu votre demande.\n";
     document.getElementById("adress").innerText = response.coords.adress;
     document.getElementById("wikizone").innerText = response.wiki_info[0];
-    document.getElementById("wikiurl").innerHTML = response.wiki_info[1];
+    document.getElementById("wikiurl").innerHTML = "<a href='" + response.wiki_info[1] + "'>Consultez la page Wikipédia ici.</a>"
     displayMap(response.coords["coords"]["lat"], response.coords["coords"]["lng"]);
 }
 
