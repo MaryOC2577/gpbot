@@ -29,7 +29,8 @@ function onJson(response) {
     console.log(response);
     document.getElementById("chatzone").innerText = response.text + "\n GrandPy Bot a bien reçu votre demande.\n";
     document.getElementById("adress").innerText = response.coords.adress;
-    document.getElementById("wikizone").innerText = response.wiki_info;
+    document.getElementById("wikizone").innerText = response.wiki_info[0];
+    document.getElementById("wikiurl").innerHTML = response.wiki_info[1];
     displayMap(response.coords["coords"]["lat"], response.coords["coords"]["lng"]);
 }
 

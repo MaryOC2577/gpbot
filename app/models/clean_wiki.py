@@ -22,7 +22,10 @@ class WikiAPI:
     def get_wiki_text(self, location):
 
         wiki_url = self.find_wiki_text(location)
-        json_url = "https://fr.wikipedia.org/api/rest_v1/page/summary/" + location
+        json_url = (
+            "https://fr.wikipedia.org/api/rest_v1/page/summary/"
+            + location.replace(" ", "_")
+        )
         response = requests.get(
             json_url,
             params={
@@ -36,5 +39,5 @@ class WikiAPI:
         if intro_text.isspace():
             return "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
         else:
-            wiki_info = intro_text + wiki_url
+            wiki_info = [intro_text, wiki_url]
             return wiki_info
