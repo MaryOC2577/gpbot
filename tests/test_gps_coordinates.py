@@ -18,4 +18,4 @@ def test_execute(monkeypatch):
 
     monkeypatch.setattr(requests, "get", fake_get)
     coords = HereAPI()
-    assert coords.execute() == {"lat": 48.87695, "lng": 2.29362}
+    assert coords.find_coordinates("paris") == test_execute()

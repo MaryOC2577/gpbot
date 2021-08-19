@@ -63,6 +63,7 @@
         "bigre",
         "boum",
         "bonjour",
+        "bonjour,",
         "bravo",
         "brrr",
         "c",
@@ -515,6 +516,7 @@
         "son",
         "sont",
         "sous",
+        "souhaite",
         "souvent",
         "specifique",
         "specifiques",
@@ -633,6 +635,7 @@
         "!",
         ".",
         ";",
-        "-"
+        "-",
+        "'"
     ]
 }
