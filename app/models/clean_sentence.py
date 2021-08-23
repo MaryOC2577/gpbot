@@ -16,11 +16,16 @@ class Parser:
 
     def delete_stop_words(self, list_sentence):
         """Delete stop_words in a list."""
-        list_words = self.load_stop_words()["stop words"]
-        for element in list_words:
+        stop_words = self.load_stop_words()["stop words"]
+        stop_chars = self.load_stop_words()["stop chars"]
+        for element in stop_words:
             for word in list_sentence:
+                for letter in word:
+                    if letter in stop_chars:
+                        word.replace(letter, " ")
                 if word == element:
                     del list_sentence[list_sentence.index(word)]
+
         return list_sentence
 
     def clean_text(self, sentence):
