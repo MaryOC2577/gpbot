@@ -24,13 +24,12 @@ class TestSentence:
         clean_sentence = Parser()
         assert (
             clean_sentence.clean_text(sentence)
-            == "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé "
-            + "d'information concernant ce lieu. Veuillez reformuler votre demande."
+            == "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
         )
 
     @pytest.mark.parametrize(
         "text,result",
-        (["bonjour, je souhaite avoir l'adresse d'OpenClassrooms", "openClassrooms"],),
+        (["bonjour, je souhaite avoir l'adresse d'Openclassrooms", "openclassrooms"],),
     )
     def test_openclassrooms(self, text, result):
         sentence = Parser()

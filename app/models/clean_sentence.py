@@ -24,7 +24,7 @@ class Parser:
         return list_sentence
 
     def clean_text(self, sentence):
-        if sentence is None:
+        if sentence == "":
             err_msg = "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
             return err_msg
         else:

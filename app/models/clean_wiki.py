@@ -4,9 +4,9 @@ from lxml import html
 
 
 class WikiAPI:
-    def find_wiki_text(self, location):
+    def find_page(self, location):
 
-        response = requests.get(
+        data = requests.get(
             "https://fr.wikipedia.org/w/api.php",
             params={
                 "action": "opensearch",
@@ -16,12 +16,12 @@ class WikiAPI:
                 "namespace": 0,
             },
         ).json()
-        url = "".join(response[3])
+        url = "".join(data[3])
         return url
 
-    def get_wiki_text(self, location):
+    def get_text(self, location):
 
-        wiki_url = self.find_wiki_text(location)
+        wiki_url = self.find_page(location)
         json_url = (
             "https://fr.wikipedia.org/api/rest_v1/page/summary/"
             + location.replace(" ", "_")
@@ -36,8 +36,12 @@ class WikiAPI:
 
         intro_text = response["extract"]
 
-        if intro_text.isspace():
-            return "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
+        if not intro_text.replace(" ", ""):
+            return (
+                "Désolé GrandPy ne sais pas lire dans "
+                "les pensées et n'as pas trouvé d'information concernant"
+                " ce lieu. Veuillez reformuler votre demande."
+            )
         else:
             wiki_info = [intro_text, wiki_url]
             return wiki_info

@@ -5,16 +5,13 @@ from app.models.clean_wiki import WikiAPI
 
 class FakeResponse:
     def json(self):
-        return "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
+        return {"extract": "", 3: ""}
 
 
-def test_execute(monkeypatch):
+def test_wiki_if_no_result(monkeypatch):
     def fake_get(*args, **kwargs):
         return FakeResponse()
 
     monkeypatch.setattr(requests, "get", fake_get)
     wiki = WikiAPI()
-    assert (
-        wiki.find_wiki_text("paris")
-        == "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
-    )
+    assert wiki.get_text("paris").startswith("Désolé GrandPy")

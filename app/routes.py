@@ -31,7 +31,7 @@ def find_place():
     print("cleaned text :", cleaned_text)
     coords = hereapi.find_coordinates(cleaned_text)
     print("coords :", coords)
-    wiki_text = wikiapi.get_wiki_text(cleaned_text)
+    wiki_text = wikiapi.get_text(cleaned_text)
     print("wiki text :", wiki_text)
 
     return jsonify(
