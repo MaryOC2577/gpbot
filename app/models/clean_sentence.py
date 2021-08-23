@@ -22,7 +22,9 @@ class Parser:
             for word in list_sentence:
                 for letter in word:
                     if letter in stop_chars:
-                        word.replace(letter, " ")
+                        for index, value in enumerate(list_sentence):
+                            if value == word:
+                                list_sentence[index] = word.replace(letter, " ")[2:]
                 if word == element:
                     del list_sentence[list_sentence.index(word)]
 
