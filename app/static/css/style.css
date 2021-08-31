@@ -8,14 +8,15 @@ body {
 }
 
 .container {
-  width: 50vw;
+  width: 42vw;
 }
 .chatzone {
 
 }
 
 .chatarea {
-  background-color: cadetblue;
+  background-color: rgb(110, 189, 212);
+  border-radius: 0.5em;
 }
 
 .presentation {
