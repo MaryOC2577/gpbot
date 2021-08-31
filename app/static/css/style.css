@@ -7,6 +7,12 @@ body {
    
 }
 
+.container {
+  width: 50vw;
+}
+.chatzone {
+
+}
 
 .chatarea {
   background-color: cadetblue;

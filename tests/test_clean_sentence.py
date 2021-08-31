@@ -29,8 +29,15 @@ class TestSentence:
 
     @pytest.mark.parametrize(
         "text,result",
-        (["bonjour, je souhaite avoir l'adresse d'Openclassrooms", "openclassrooms"],),
+        (
+            ["bonjour, je souhaite avoir l'adresse d'Openclassrooms", "openclassrooms"],
+            ["salut grandpy je cherche la ville de Strasbourg", "strasbourg"],
+            [
+                "Dis grandpy indique moi comment trouver les pyramides d'Egypte stp",
+                "pyramides egypte",
+            ],
+        ),
     )
-    def test_openclassrooms(self, text, result):
+    def test_keywords(self, text, result):
         sentence = Parser()
         assert sentence.clean_text(text) == result
