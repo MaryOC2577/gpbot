@@ -14,6 +14,9 @@ class HereAPI:
         }
         coords = {}
         response = requests.get(url, params=params)
-        coords["coords"] = response.json()["items"][0]["position"]
-        coords["adress"] = response.json()["items"][0]["title"]
+        if response.json()["items"] == []:
+            coords = {"coords": {"lat": 43.29337, "lng": 5.37131}}
+        else:
+            coords["coords"] = response.json()["items"][0]["position"]
+            coords["adress"] = response.json()["items"][0]["title"]
         return coords
