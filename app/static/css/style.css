@@ -23,5 +23,6 @@ body {
 }
 
 .heremap {
-  background-color: rgb(145, 214, 76);
+  width: 640px; 
+  height: 480px
 }
