@@ -1,7 +1,6 @@
 """Class that returns gps coordinates from a place name."""
 
 import requests
-from pprint import pprint
 
 
 class HereAPI:

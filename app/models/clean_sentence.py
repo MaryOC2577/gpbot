@@ -32,7 +32,10 @@ class Parser:
 
     def clean_text(self, sentence):
         if sentence == "":
-            err_msg = "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
+            err_msg = (
+                "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas"
+                " trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
+            )
             return err_msg
         else:
             return " ".join(self.delete_stop_words(self.clear_sentence(sentence)))

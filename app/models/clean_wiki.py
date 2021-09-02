@@ -1,7 +1,5 @@
 import requests
 
-from lxml import html
-
 
 class WikiAPI:
     def find_page(self, location):
