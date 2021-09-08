@@ -37,9 +37,7 @@ class WikiAPI:
         ).json()
 
         if response["title"] == "Not found.":
-            intro_text = (
-                "Désolé GrandPy ne peut pas trouver un lieu" " qui n'existe pas."
-            )
+            intro_text = "Désolé GrandPy ne peut pas trouver un lieu qui n'existe pas."
         else:
             intro_text = response["extract"]
 

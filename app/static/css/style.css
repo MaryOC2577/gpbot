@@ -14,15 +14,30 @@ body {
 
 .chatarea {
   background-color: rgb(151, 227, 250);
+  width: auto;
   
 }
 
 .presentation {
   text-align: center;
   background-color: rgb(248, 168, 199);
+  width: auto;
 }
 
 .heremap {
   width: 40em; 
   height: 30em;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+  body {
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+     
+  }
 }
