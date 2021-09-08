@@ -22,9 +22,10 @@ class TestSentence:
         """Return a message when it's empty."""
         sentence = ""
         clean_sentence = Parser()
-        assert (
-            clean_sentence.clean_text(sentence)
-            == "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas trouvé d'information concernant ce lieu. Veuillez reformuler votre demande."
+        assert clean_sentence.clean_text(sentence) == (
+            "Désolé GrandPy ne sais pas lire dans les pensées "
+            "et n'as pas trouvé d'information concernant ce "
+            "lieu. Veuillez reformuler votre demande."
         )
 
     @pytest.mark.parametrize(
