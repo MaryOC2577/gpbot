@@ -5,6 +5,7 @@ import requests
 
 class HereAPI:
     def find_coordinates(self, sentence):
+        """Return coords of a location."""
 
         url = "https://geocode.search.hereapi.com/v1/geocode"
         params = {

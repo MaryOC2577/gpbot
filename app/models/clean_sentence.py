@@ -5,6 +5,7 @@ import json
 
 class Parser:
     def load_stop_words(self):
+        "Load stop words."
         with open("app/data/stopwords.json", "r") as json_data:
             stop_words = json.load(json_data)
         return stop_words
@@ -31,6 +32,7 @@ class Parser:
         return list_sentence
 
     def clean_text(self, sentence):
+        "Return location after cleaning the sentence."
         if sentence == "":
             err_msg = (
                 "Désolé GrandPy ne sais pas lire dans les pensées et n'as pas"

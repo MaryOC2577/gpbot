@@ -1,4 +1,4 @@
-"""Test sentence module."""
+"""Tests clean sentence module."""
 
 import pytest
 from app.models.clean_sentence import Parser

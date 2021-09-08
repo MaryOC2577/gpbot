@@ -5,10 +5,6 @@ from app.models.gps_coordinates import HereAPI
 
 class FakeResponse:
     def json(self):
-        # return {
-        #     "coords": {"lat": 48.85717, "lng": 2.3414},
-        #     "adress": "Paris, Île-de-France, France",
-        # }
         return {
             "items": [
                 {

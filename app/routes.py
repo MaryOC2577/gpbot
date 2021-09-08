@@ -12,11 +12,13 @@ from app import app
 @app.route("/")
 @app.route("/index")
 def index():
+    """Show home page."""
     return render_template("index.html", title="Home")
 
 
 @app.route("/find_place", methods=["GET", "POST"])
 def find_place():
+    """Show infos about a location."""
 
     data = request.get_json()
     text = data["text"]

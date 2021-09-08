@@ -1,8 +1,11 @@
+"""Clean wiki infos."""
+
 import requests
 
 
 class WikiAPI:
     def find_page(self, location):
+        """Return the url of the location."""
 
         data = requests.get(
             "https://fr.wikipedia.org/w/api.php",
@@ -18,6 +21,7 @@ class WikiAPI:
         return url
 
     def get_text(self, location):
+        """Return wiki infos about the location."""
 
         wiki_url = self.find_page(location)
         json_url = (

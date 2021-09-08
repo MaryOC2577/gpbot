@@ -1,3 +1,4 @@
+"""Test clean wiki."""
 import requests
 
 from app.models.clean_wiki import WikiAPI
