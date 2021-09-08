@@ -40,4 +40,9 @@ body {
     width: auto;
      
   }
+
+  .container {
+    width: 60vw;
+    border-radius: 0.5em;
+  }
 }
