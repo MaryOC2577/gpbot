@@ -31,8 +31,14 @@ function onJson(response) {
     document.getElementById("adress").innerText = response.coords.adress;
     document.getElementById("wikizone").innerText = response.wiki_info[0];
     document.getElementById("wikiurl").innerHTML = "<a href='" + response.wiki_info[1] + "'>Consultez la page Wikipédia ici.</a>"
-    displayMap(response.coords["coords"]["lat"], response.coords["coords"]["lng"]);
+    if (response.text == "") {
+
+    } else {
+        displayMap(response.coords["coords"]["lat"], response.coords["coords"]["lng"]);
+    }
+
 }
+
 
 
 function displayMap(lati, longi) {

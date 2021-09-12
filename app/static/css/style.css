@@ -29,7 +29,7 @@ body {
   height: 30em;
 }
 
-/* Small devices (landscape phones, 360px and up) */
+/* Small devices  phones 360px */
 
 @media (min-width: 360px) {
   body {
