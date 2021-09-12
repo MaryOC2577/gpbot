@@ -27,10 +27,10 @@ function onServerResponse(response) {
 
 function onJson(response) {
     console.log(response);
-    document.getElementById("chatzone").innerText = response.text + "\n GrandPy Bot a bien reçu votre demande.\n";
-    document.getElementById("adress").innerText = response.coords.adress;
-    document.getElementById("wikizone").innerText = response.wiki_info[0];
-    document.getElementById("wikiurl").innerHTML = "<a href='" + response.wiki_info[1] + "'>Consultez la page Wikipédia ici.</a>"
+    document.getElementById("chatzone").innerText += response.text + "\n GrandPy Bot a bien reçu votre demande.\n\n";
+    document.getElementById("adress").innerText += response.coords.adress + "\n\n";
+    document.getElementById("wikizone").innerText += response.wiki_info[0] + "\n\n";
+    document.getElementById("wikiurl").innerHTML = "<a href='" + response.wiki_info[1] + "'>Consultez la page Wikipédia ici.</a>\n"
     if (response.text == "") {
 
     } else {
