@@ -29,25 +29,27 @@ body {
   height: 30em;
 }
 
-/* Small devices (landscape phones, 576px and up) */
+/* Small devices (landscape phones, 360px and up) */
 
-@media (min-width: 576px) {
+@media (min-width: 360px) {
   body {
     display: flex;
     text-align: justify;
     align-items: center;
     flex-direction: column;
     width: auto;
+    margin: auto;
      
   }
 
   .container {
-    width: 60vw;
+    width: auto;
     border-radius: 0.5em;
+    margin: auto;
   }
 
   .heremap {
-    width: 2Oem; 
-    height: 15em;
+    width: 20em; 
+    height: 10em;
   }
 }
