@@ -1,7 +1,7 @@
 # **Project 7 - Create GrandPy Bot, the grandpa robot**
 
 ## **What does the program do ?**
-The purpose of the program is to interact with Here Maps and Wikipedia.
+The purpose of the program is to interact with Here Maps and Wikipedia APIS.
 The application allows the user to display the address of a place, information about that place and its position on a map. 
 Project monitoring is available [here](https://trello.com/b/xOVPbFJ8/granpy-bot).
 The repository on GitHub is availiable [here](https://github.com/MaryOC2577/gpbot.git).
