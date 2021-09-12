@@ -2,15 +2,12 @@
 
 import requests
 
-# from dotenv import load_dotenv
 import os
 
 
 class HereAPI:
     def find_coordinates(self, sentence):
         """Return coords of a location."""
-
-        # load_dotenv()
 
         url = "https://geocode.search.hereapi.com/v1/geocode"
         params = {
