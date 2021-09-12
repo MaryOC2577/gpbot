@@ -14,14 +14,12 @@ body {
 
 .chatarea {
   background-color: rgb(151, 227, 250);
-  width: auto;
   
 }
 
 .presentation {
   text-align: center;
   background-color: rgb(248, 168, 199);
-  width: auto;
 }
 
 .heremap {
@@ -31,7 +29,7 @@ body {
 
 /* Small devices  phones 360px */
 
-@media (min-width: 360px) {
+@media (min-width: 200px) and (max-width: 500px) {
   body {
     display: flex;
     text-align: justify;
