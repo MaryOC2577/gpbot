@@ -45,8 +45,8 @@ function displayMap(lati, longi) {
     document.getElementById("mapContainer").innerText = ""
     // Initialize the platform object:
     var platform = new H.service.Platform({
-        'apikey': 'ALVdVW2nuitwsEdyBZ4ftGgxEEGG8gFpNHvUzwLXS9E',
-        'app_id': 'EtVVzQPzJ7UmbsgA2hgs'
+        'apikey': "x",
+        'app_id': 'x'
 
     });
 
